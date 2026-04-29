@@ -32,10 +32,11 @@ WorldEd-LessonGenerator/
 │   └── BLANK_TEMPLATE_gameset-bingo.html
 │
 ├── source/                        ← Put your lesson PDFs here
-│   ├── Lesson_1_JacksBirthday_...pdf   (example — Unit 1)
-│   ├── Lesson_2_JacksBirthday_...pdf
-│   ├── Lesson_3_JacksBirthday_...pdf
-│   └── Lesson_4_JacksBirthday_...pdf
+│   └── Unit1-JacksBirthday/       ← One folder per unit (example)
+│       ├── Lesson_1_JacksBirthday_BP-English1A-2026.pdf
+│       ├── Lesson_2_JacksBirthday_BP-English1A-2026.pdf
+│       ├── Lesson_3_JacksBirthday_BP-English1A-2026.pdf
+│       └── Lesson_4_JacksBirthday_BP-English1A-2026.pdf
 │
 └── Deliverables/
     └── Unit1-JacksBirthday/       ← Already generated, ready to use
@@ -105,7 +106,9 @@ Lesson_4_Coach_BP-English1A-2026.pdf
 
 **Step 2 — Put the PDFs in the source/ folder**
 
-Copy your 4 PDFs into the `source/` folder in this project.
+Create a new subfolder inside `source/` for the unit, then copy your 4 PDFs there.
+
+Example for Unit 2 (Coach): create the folder `source/Unit2-Coach/` and put the 4 PDFs inside it.
 
 **Step 3 — Open this folder in Claude Code**
 
@@ -120,11 +123,11 @@ Copy the message below. Replace the words in [brackets] with your unit informati
 ```
 Generate all 4 lesson HTMLs and all worksheets for Unit [NUMBER] — [UNIT NAME].
 
-The 4 lesson PDFs are in the source/ folder:
-- Lesson_1_[UnitName]_BP-English1A-2026.pdf
-- Lesson_2_[UnitName]_BP-English1A-2026.pdf
-- Lesson_3_[UnitName]_BP-English1A-2026.pdf
-- Lesson_4_[UnitName]_BP-English1A-2026.pdf
+The 4 lesson PDFs are in the source/Unit[NUMBER]-[UnitName]/ folder:
+- source/Unit[NUMBER]-[UnitName]/Lesson_1_[UnitName]_BP-English1A-2026.pdf
+- source/Unit[NUMBER]-[UnitName]/Lesson_2_[UnitName]_BP-English1A-2026.pdf
+- source/Unit[NUMBER]-[UnitName]/Lesson_3_[UnitName]_BP-English1A-2026.pdf
+- source/Unit[NUMBER]-[UnitName]/Lesson_4_[UnitName]_BP-English1A-2026.pdf
 
 Save all outputs to:
 - Deliverables/Unit[NUMBER]-[UnitName]/HTMLs/
@@ -138,11 +141,11 @@ Verify that 0 placeholders are left unfilled before finishing.
 ```
 Generate all 4 lesson HTMLs and all worksheets for Unit 2 — Coach.
 
-The 4 lesson PDFs are in the source/ folder:
-- Lesson_1_Coach_BP-English1A-2026.pdf
-- Lesson_2_Coach_BP-English1A-2026.pdf
-- Lesson_3_Coach_BP-English1A-2026.pdf
-- Lesson_4_Coach_BP-English1A-2026.pdf
+The 4 lesson PDFs are in the source/Unit2-Coach/ folder:
+- source/Unit2-Coach/Lesson_1_Coach_BP-English1A-2026.pdf
+- source/Unit2-Coach/Lesson_2_Coach_BP-English1A-2026.pdf
+- source/Unit2-Coach/Lesson_3_Coach_BP-English1A-2026.pdf
+- source/Unit2-Coach/Lesson_4_Coach_BP-English1A-2026.pdf
 
 Save all outputs to:
 - Deliverables/Unit2-Coach/HTMLs/

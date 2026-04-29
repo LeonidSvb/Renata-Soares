@@ -55,7 +55,7 @@ DO: Unzip → open folder → show in Explorer/Finder.
 
 POINT TO each folder and SAY:
 - "templates/ — these are the master HTML templates. Do not edit these."
-- "source/ — this is where lesson PDFs go. The Unit 1 PDFs are already here as examples."
+- "source/ — this is where lesson PDFs go. Each unit gets its own subfolder. Unit 1 is already here as an example."
 - "Deliverables/Unit1-JacksBirthday/ — these are your ready-to-use files."
 - "README.md — full written instructions for everything."
 
@@ -122,7 +122,7 @@ DO: Open README.md (or describe the steps from it).
 
 SAY:
 "Step 1 — download the 4 lesson PDFs from Canvas for the next unit.
-Step 2 — copy them into the source/ folder.
+Step 2 — create a new subfolder inside source/ — for example source/Unit2-Coach/ — and copy the PDFs there.
 Step 3 — open this project folder in Claude Code.
 Step 4 — paste this message:"
 
