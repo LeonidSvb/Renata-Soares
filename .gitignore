@@ -1,0 +1,14 @@
+# Large files
+source/Soar in Reading 1 - Book.pdf
+Deliverables/*.zip
+
+# Old reference folder (local only)
+Project_ LessonPlan_PlanoDeAulaELA/
+
+# Internal call notes (local only)
+Calls/
+
+# System
+.DS_Store
+Thumbs.db
+__pycache__/

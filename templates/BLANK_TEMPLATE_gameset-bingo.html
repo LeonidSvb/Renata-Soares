@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{GAME_TITLE}} | WorldEd School</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @page { size: A4; margin: 0; }
+        @media print {
+            html, body { width: 210mm; height: 297mm; margin: 0; padding: 0; }
+            .page-container { width: 210mm; height: 297mm; max-height: 297mm; margin: 0; padding: 10mm; overflow: hidden; page-break-after: always; page-break-inside: avoid; }
+            .bingo-card, .calling-card, .instructions-box { page-break-inside: avoid; break-inside: avoid; }
+        }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #333; background-color: #ECEFF1; }
+        .page-container { width: 210mm; height: 297mm; max-height: 297mm; padding: 10mm; background: white; margin: 10px auto; position: relative; overflow: hidden; }
+        .school-header { text-align: center; font-family: Georgia, serif; color: #1a3557; font-size: 28px; font-weight: bold; margin-bottom: 5px; }
+        .subtitle { text-align: center; font-size: 14px; color: #1a3557; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #1a3557; }
+        .instructions-box { border: 2px solid #1a3557; border-radius: 8px; padding: 15px 20px; margin-bottom: 15px; }
+        .section-title { font-size: 16px; font-weight: bold; color: #F9A825; margin-bottom: 8px; }
+        .section-content { font-size: 13px; color: #333; line-height: 1.6; margin-bottom: 12px; }
+        .section-content:last-child { margin-bottom: 0; }
+        .how-to-play ol { margin-left: 20px; font-size: 13px; line-height: 1.6; }
+        .teacher-script { font-style: italic; font-size: 12px; color: #555; background: #FFF8E1; padding: 10px; border-radius: 6px; line-height: 1.5; }
+        .page-footer { position: absolute; bottom: 10mm; left: 10mm; right: 10mm; font-size: 9px; color: #888; }
+        .cards-subtitle { text-align: center; font-size: 14px; color: #1a3557; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #1a3557; }
+        .calling-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 5px; }
+        .calling-card { border: 3px dashed #1a3557; border-radius: 10px; padding: 12px; text-align: center; background: #FAFAFA; }
+        .calling-word { font-size: 18px; font-weight: bold; color: #1a3557; text-transform: uppercase; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 2px solid #F9A825; }
+        .calling-clue { font-size: 11px; color: #555; font-style: italic; line-height: 1.4; }
+        .bingo-cards-container { display: flex; flex-direction: column; gap: 10px; padding: 0; }
+        .bingo-card { border: 3px solid #1a3557; border-radius: 10px; padding: 8px; background: #FAFAFA; }
+        .bingo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; padding-bottom: 5px; border-bottom: 2px solid #F9A825; }
+        .bingo-title { font-size: 16px; font-weight: bold; color: #1a3557; }
+        .bingo-skill { font-size: 10px; color: #555; background: #E3F2FD; padding: 4px 8px; border-radius: 4px; }
+        .bingo-name-line { font-size: 11px; color: #555; margin-bottom: 5px; }
+        .bingo-name-line span { border-bottom: 1px solid #333; display: inline-block; min-width: 120px; }
+        .bingo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+        .bingo-cell { height: 65px; border: 2px solid #1a3557; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 12px; font-weight: bold; color: #1a3557; background: white; padding: 3px; }
+        .bingo-cell.free { background: #F9A825; color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: TEACHER'S MANUAL -->
+    <div class="page-container">
+        <div class="school-header">WorldEd School</div>
+        <div class="subtitle">Teacher's Manual: {{GAME_TITLE}} 🎲</div>
+        <div class="instructions-box">
+            <div class="section-title">Goal of the Game</div>
+            <div class="section-content">{{GAME_GOAL}}</div>
+            <div class="section-title">How to Play</div>
+            <div class="section-content how-to-play">
+                <ol>
+                    <li>{{GAME_STEP_1}}</li>
+                    <li>{{GAME_STEP_2}}</li>
+                    <li>{{GAME_STEP_3}}</li>
+                </ol>
+            </div>
+            <div class="section-title">Teacher Script 🗣️</div>
+            <div class="teacher-script">{{TEACHER_SCRIPT}}</div>
+        </div>
+        <div class="page-footer">WorldEd School — {{FOOTER_COURSE}} — {{FOOTER_LESSON}} Page 1</div>
+    </div>
+
+    <!-- PAGE 2: CALLING CARDS -->
+    <div class="page-container">
+        <div class="school-header">WorldEd School</div>
+        <div class="cards-subtitle">Game Materials: Calling Cards (Cut & Draw) ✂️</div>
+        <div class="calling-cards-grid">
+            <div class="calling-card">
+                <div class="calling-word">{{WORD_1}}</div>
+                <div class="calling-clue">{{CLUE_1}}</div>
+            </div>
+            <div class="calling-card">
+                <div class="calling-word">{{WORD_2}}</div>
+                <div class="calling-clue">{{CLUE_2}}</div>
+            </div>
+            <div class="calling-card">
+                <div class="calling-word">{{WORD_3}}</div>
+                <div class="calling-clue">{{CLUE_3}}</div>
+            </div>
+            <div class="calling-card">
+                <div class="calling-word">{{WORD_4}}</div>
+                <div class="calling-clue">{{CLUE_4}}</div>
+            </div>
+            <div class="calling-card">
+                <div class="calling-word">{{WORD_5}}</div>
+                <div class="calling-clue">{{CLUE_5}}</div>
+            </div>
+            <div class="calling-card">
+                <div class="calling-word">{{WORD_6}}</div>
+                <div class="calling-clue">{{CLUE_6}}</div>
+            </div>
+            <div class="calling-card">
+                <div class="calling-word">{{WORD_7}}</div>
+                <div class="calling-clue">{{CLUE_7}}</div>
+            </div>
+            <div class="calling-card">
+                <div class="calling-word">{{WORD_8}}</div>
+                <div class="calling-clue">{{CLUE_8}}</div>
+            </div>
+        </div>
+        <div class="page-footer">WorldEd School — {{FOOTER_COURSE}} — {{FOOTER_LESSON}} Page 2</div>
+    </div>
+
+    <!-- PAGE 3: BINGO CARDS 1-2 -->
+    <div class="page-container">
+        <div class="school-header">WorldEd School</div>
+        <div class="cards-subtitle">🎯 Bingo Cards — {{GAME_TITLE}}</div>
+        <div class="bingo-cards-container">
+            <div class="bingo-card">
+                <div class="bingo-header">
+                    <div class="bingo-title">BINGO Card #1</div>
+                    <div class="bingo-skill">{{CCSS_SKILL_DESCRIPTION}}</div>
+                </div>
+                <div class="bingo-name-line">Name: <span></span></div>
+                <div class="bingo-grid">
+                    <div class="bingo-cell">{{WORD_1}}</div>
+                    <div class="bingo-cell">{{WORD_2}}</div>
+                    <div class="bingo-cell">{{WORD_3}}</div>
+                    <div class="bingo-cell">{{WORD_4}}</div>
+                    <div class="bingo-cell free">FREE</div>
+                    <div class="bingo-cell">{{WORD_5}}</div>
+                    <div class="bingo-cell">{{WORD_6}}</div>
+                    <div class="bingo-cell">{{WORD_7}}</div>
+                    <div class="bingo-cell">{{WORD_8}}</div>
+                </div>
+            </div>
+            <div class="bingo-card">
+                <div class="bingo-header">
+                    <div class="bingo-title">BINGO Card #2</div>
+                    <div class="bingo-skill">{{CCSS_SKILL_DESCRIPTION}}</div>
+                </div>
+                <div class="bingo-name-line">Name: <span></span></div>
+                <div class="bingo-grid">
+                    <div class="bingo-cell">{{WORD_8}}</div>
+                    <div class="bingo-cell">{{WORD_7}}</div>
+                    <div class="bingo-cell">{{WORD_6}}</div>
+                    <div class="bingo-cell">{{WORD_5}}</div>
+                    <div class="bingo-cell free">FREE</div>
+                    <div class="bingo-cell">{{WORD_4}}</div>
+                    <div class="bingo-cell">{{WORD_3}}</div>
+                    <div class="bingo-cell">{{WORD_2}}</div>
+                    <div class="bingo-cell">{{WORD_1}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: BINGO CARDS 3-4 -->
+    <div class="page-container">
+        <div class="school-header">WorldEd School</div>
+        <div class="cards-subtitle">🎯 Bingo Cards — {{GAME_TITLE}}</div>
+        <div class="bingo-cards-container">
+            <div class="bingo-card">
+                <div class="bingo-header">
+                    <div class="bingo-title">BINGO Card #3</div>
+                    <div class="bingo-skill">{{CCSS_SKILL_DESCRIPTION}}</div>
+                </div>
+                <div class="bingo-name-line">Name: <span></span></div>
+                <div class="bingo-grid">
+                    <div class="bingo-cell">{{WORD_3}}</div>
+                    <div class="bingo-cell">{{WORD_1}}</div>
+                    <div class="bingo-cell">{{WORD_5}}</div>
+                    <div class="bingo-cell">{{WORD_7}}</div>
+                    <div class="bingo-cell free">FREE</div>
+                    <div class="bingo-cell">{{WORD_2}}</div>
+                    <div class="bingo-cell">{{WORD_8}}</div>
+                    <div class="bingo-cell">{{WORD_4}}</div>
+                    <div class="bingo-cell">{{WORD_6}}</div>
+                </div>
+            </div>
+            <div class="bingo-card">
+                <div class="bingo-header">
+                    <div class="bingo-title">BINGO Card #4</div>
+                    <div class="bingo-skill">{{CCSS_SKILL_DESCRIPTION}}</div>
+                </div>
+                <div class="bingo-name-line">Name: <span></span></div>
+                <div class="bingo-grid">
+                    <div class="bingo-cell">{{WORD_6}}</div>
+                    <div class="bingo-cell">{{WORD_4}}</div>
+                    <div class="bingo-cell">{{WORD_8}}</div>
+                    <div class="bingo-cell">{{WORD_2}}</div>
+                    <div class="bingo-cell free">FREE</div>
+                    <div class="bingo-cell">{{WORD_7}}</div>
+                    <div class="bingo-cell">{{WORD_5}}</div>
+                    <div class="bingo-cell">{{WORD_1}}</div>
+                    <div class="bingo-cell">{{WORD_3}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 5: BINGO CARDS 5-6 -->
+    <div class="page-container">
+        <div class="school-header">WorldEd School</div>
+        <div class="cards-subtitle">🎯 Bingo Cards — {{GAME_TITLE}}</div>
+        <div class="bingo-cards-container">
+            <div class="bingo-card">
+                <div class="bingo-header">
+                    <div class="bingo-title">BINGO Card #5</div>
+                    <div class="bingo-skill">{{CCSS_SKILL_DESCRIPTION}}</div>
+                </div>
+                <div class="bingo-name-line">Name: <span></span></div>
+                <div class="bingo-grid">
+                    <div class="bingo-cell">{{WORD_2}}</div>
+                    <div class="bingo-cell">{{WORD_5}}</div>
+                    <div class="bingo-cell">{{WORD_1}}</div>
+                    <div class="bingo-cell">{{WORD_8}}</div>
+                    <div class="bingo-cell free">FREE</div>
+                    <div class="bingo-cell">{{WORD_3}}</div>
+                    <div class="bingo-cell">{{WORD_6}}</div>
+                    <div class="bingo-cell">{{WORD_4}}</div>
+                    <div class="bingo-cell">{{WORD_7}}</div>
+                </div>
+            </div>
+            <div class="bingo-card">
+                <div class="bingo-header">
+                    <div class="bingo-title">BINGO Card #6</div>
+                    <div class="bingo-skill">{{CCSS_SKILL_DESCRIPTION}}</div>
+                </div>
+                <div class="bingo-name-line">Name: <span></span></div>
+                <div class="bingo-grid">
+                    <div class="bingo-cell">{{WORD_7}}</div>
+                    <div class="bingo-cell">{{WORD_4}}</div>
+                    <div class="bingo-cell">{{WORD_6}}</div>
+                    <div class="bingo-cell">{{WORD_3}}</div>
+                    <div class="bingo-cell free">FREE</div>
+                    <div class="bingo-cell">{{WORD_8}}</div>
+                    <div class="bingo-cell">{{WORD_1}}</div>
+                    <div class="bingo-cell">{{WORD_5}}</div>
+                    <div class="bingo-cell">{{WORD_2}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Explorer: /b/ Sounds and Homograph Match-Up | WorldEd School</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @page { size: A4; margin: 0; }
+        @media print {
+            html, body { width: 210mm; height: 297mm; margin: 0; padding: 0; }
+            .page-container { width: 210mm; height: 297mm; max-height: 297mm; margin: 0; padding: 10mm; overflow: hidden; page-break-after: always; }
+            .exercise-section { page-break-inside: avoid; break-inside: avoid; }
+            .exercise-header { page-break-after: avoid; break-after: avoid; }
+        }
+        .page-container { width: 210mm; height: 297mm; max-height: 297mm; padding: 10mm; background: #FFFEF8; position: relative; font-family: 'Segoe UI', Tahoma, sans-serif; color: #333; margin: 0 auto; overflow: hidden; }
+        .school-header { text-align: center; font-family: Georgia, serif; color: #1a3557; font-size: 22px; font-weight: bold; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 3px solid #F2B86D; }
+        .student-info { font-size: 12px; margin-bottom: 8px; padding: 8px 10px; background: white; border-radius: 8px; border: 1px solid #e0e0e0; }
+        .info-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+        .info-row:last-child { margin-bottom: 0; }
+        .info-row.split { display: flex; gap: 30px; }
+        .info-field { display: flex; align-items: center; gap: 8px; flex: 1; }
+        .info-underline { border-bottom: 1px solid #333; display: inline-block; flex: 1; min-height: 18px; }
+        .identification-banner { background: white; color: #1a3557; border: 2px solid #1a3557; padding: 6px 15px; text-align: center; font-weight: bold; font-size: 14px; margin-bottom: 8px; border-radius: 8px; }
+        .role-box { display: flex; align-items: center; gap: 10px; padding: 8px 12px; margin-bottom: 10px; background: #FFF9F2; border-left: 4px solid #F2B86D; border-radius: 0 8px 8px 0; }
+        .role-emoji { font-size: 28px; }
+        .role-content { flex: 1; }
+        .role-title { font-size: 14px; font-weight: bold; color: #1a3557; }
+        .standard-line { font-size: 11px; color: #666; }
+        .exercise-section { margin-bottom: 12px; }
+        .exercise-header { display: inline-flex; align-items: center; gap: 8px; background: white; color: #1565C2; border: 2px solid #1565C2; padding: 5px 12px; font-weight: bold; font-size: 13px; margin-bottom: 6px; border-radius: 15px; }
+        .exercise-header.green { background: white; color: #2E7D32; border: 2px solid #2E7D32; }
+        .exercise-instruction { font-size: 12px; color: #555; margin-bottom: 8px; padding-left: 5px; }
+        .find-write-container { background: white; border-radius: 10px; border: 2px solid #E3F2FD; padding: 10px; }
+        .reading-passage { background: #FFF8E1; border-radius: 8px; padding: 12px; margin-bottom: 10px; font-size: 13px; line-height: 1.7; border-left: 4px solid #FFB300; min-height: 80px; }
+        .reading-label { font-size: 10px; color: #F57C00; font-weight: bold; text-transform: uppercase; margin-bottom: 4px; }
+        .question-row { display: flex; align-items: flex-end; gap: 10px; margin-bottom: 8px; padding: 6px 0; border-bottom: 1px dashed #e0e0e0; }
+        .question-number { background: #1565C2; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; flex-shrink: 0; }
+        .question-text { font-size: 12px; color: #333; flex: 1; }
+        .answer-line { border-bottom: 2px solid #1565C2; min-width: 120px; height: 20px; }
+        .draw-label-container { background: white; border-radius: 10px; border: 2px solid #E8F5E9; padding: 10px; }
+        .draw-prompt { background: #E8F5E9; border-radius: 8px; padding: 8px 12px; margin-bottom: 8px; text-align: center; font-size: 13px; font-weight: bold; color: #2E7D32; }
+        .draw-area { border: 3px dashed #81C784; min-height: 380px; background: white; border-radius: 10px; position: relative; margin-bottom: 8px; }
+        .draw-hint { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #A5D6A7; font-size: 14px; }
+        .label-section { display: flex; gap: 15px; }
+        .label-item { flex: 1; display: flex; align-items: center; gap: 8px; }
+        .label-icon { font-size: 16px; }
+        .label-prompt { font-size: 11px; color: #2E7D32; font-weight: bold; white-space: nowrap; }
+        .label-line { flex: 1; border-bottom: 2px solid #43A047; height: 18px; }
+        .page-footer { position: absolute; bottom: 8mm; left: 10mm; right: 10mm; font-size: 9px; color: #888; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+
+        <div class="school-header">WorldEd School</div>
+
+        <div class="student-info">
+            <div class="info-row">
+                <strong>Name:</strong> <span class="info-underline full"></span>
+            </div>
+            <div class="info-row split">
+                <div class="info-field">
+                    <strong>Date:</strong> <span class="info-underline"></span>
+                </div>
+                <div class="info-field">
+                    <strong>Teacher:</strong> <span class="info-underline"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="identification-banner">
+            ✨ Word Explorer: /b/ Sounds and Homograph Match-Up ✨
+        </div>
+
+        <div class="role-box">
+            <span class="role-emoji">&#128506;</span>
+            <div class="role-content">
+                <div class="role-title">Word Explorer</div>
+                <div class="standard-line">RF.1.2 -- Demonstrate understanding of spoken words, syllables, and sounds (phonemes).</div>
+            </div>
+        </div>
+
+        <!-- Exercise 1: READ, FIND AND WRITE -->
+        <div class="exercise-section">
+            <div class="exercise-header">
+                📖 EXERCISE 1: READ, FIND AND WRITE!
+            </div>
+            <div class="exercise-instruction">
+                <strong>Look at the pictures on Page 6 (Word Work 1). Circle the name of each picture. Then write YES if it starts with /b/ or NO if it does not.</strong>
+            </div>
+            <div class="find-write-container">
+                <div class="reading-passage">
+                    <div class="reading-label">📄 Read this:</div>
+                    <p>Word Work 1 (Page 6): Look at each picture. Say the name aloud. Color each picture that starts with the /b/ sound. Write X on each picture that does NOT start with /b/. Word Work 2: Draw a line from each word to its matching picture: box, room, cover.</p>
+                </div>
+                <div class="question-row">
+                    <div class="question-number">1</div>
+                    <div class="question-text">Does the word "bat" start with the /b/ sound? (from Word Work 1, Page 6)</div>
+                    <div class="answer-line"></div>
+                </div>
+                <div class="question-row">
+                    <div class="question-number">2</div>
+                    <div class="question-text">What are TWO meanings of the word "box"? (from Word Work 2)</div>
+                    <div class="answer-line"></div>
+                </div>
+                <div class="question-row">
+                    <div class="question-number">3</div>
+                    <div class="question-text">Match the word "cover": does it mean a lid on top, or the front of a book -- or BOTH?</div>
+                    <div class="answer-line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise 2: DRAW AND LABEL -->
+        <div class="exercise-section">
+            <div class="exercise-header green">
+                🎨 EXERCISE 2: DRAW AND LABEL!
+            </div>
+            <div class="exercise-instruction">
+                <strong>Show what you learned!</strong> Draw a picture and label the parts.
+            </div>
+            <div class="draw-label-container">
+                <div class="draw-prompt">
+                    ✏️ Draw YOUR own /b/ word -- something from your real life that starts with /b/!
+                </div>
+                <div class="draw-area">
+                    <div class="draw-hint">🖍️ Draw here!</div>
+                </div>
+                <div class="label-section">
+                    <div class="label-item">
+                        <span class="label-icon">1️⃣</span>
+                        <span class="label-prompt">My /b/ word is:</span>
+                        <div class="label-line"></div>
+                    </div>
+                    <div class="label-item">
+                        <span class="label-icon">2️⃣</span>
+                        <span class="label-prompt">It starts with:</span>
+                        <div class="label-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            WorldEd School - Soar in Reading 1 - Jack's Birthday - Lesson 2 - RFS Worksheet
+        </div>
+
+    </div>
+</body>
+</html>
